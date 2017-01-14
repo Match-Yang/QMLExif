@@ -11,7 +11,7 @@ CONFIG += plugin c++11 link_pkgconfig
 PKGCONFIG += libexif
 
 TARGET = $$qtLibraryTarget($$TARGET)
-uri = me.wanqingyang.qmlexif
+uri = QMLExif
 
 # Input
 SOURCES += \

@@ -6,6 +6,7 @@
 void QMLExifPlugin::registerTypes(const char *uri)
 {
     // @uri com.mycompany.qmlcomponents
+    Q_ASSERT(uri == QLatin1String("QMLExif"));
     qmlRegisterType<QMLExif>(uri, 1, 0, "QMLExif");
 }
 

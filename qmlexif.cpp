@@ -39,6 +39,9 @@ QString QMLExif::getTagDescription(QMLExif::QMLExifTag tag)
 
 QString QMLExif::getTagValue(QMLExifTag tag)
 {
+    if (! m_data)
+        return QString();
+
     ExifEntry *entry = exif_content_get_entry(m_data->ifd[(ExifIfd)m_ifd], (ExifTag)tag);
 
     if (entry){
@@ -72,11 +75,13 @@ QMLExif::QMLExifIfd QMLExif::ifd() const
 
 void QMLExif::setSource(QString source)
 {
-    if (m_source == source)
+    if (source.isEmpty() || m_source == source)
         return;
 
     m_source = source;
     m_data = exif_data_new_from_file(source.toUtf8().data());
+    if (! m_data)
+        return;
     emit sourceChanged(source);
 }
 

@@ -1,2 +1,2 @@
-module me.wanqingyang.qmlexif
-plugin QMLExif
+module  QMLExif
+plugin  QMLExif

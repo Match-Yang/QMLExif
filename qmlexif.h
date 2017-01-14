@@ -145,6 +145,7 @@ public:
         ET_Padding                          = 0xea1c
     };
     Q_ENUMS(QMLExifTag)
+    Q_ENUMS(QMLExifIfd)
 
     QMLExif(QQuickItem *parent = 0);
     ~QMLExif();
